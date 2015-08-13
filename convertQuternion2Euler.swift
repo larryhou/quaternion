@@ -5,7 +5,7 @@
 func convertQuaternion2Euler(quat:CMQuaternion) -> (pitch:Double, roll:Double, yaw:Double)
 {
     let x = atan2(2 * (quat.w * quat.x + quat.y * quat.z), 1 - 2 * (quat.x * quat.x + quat.y * quat.y))
-    let y = asin(2 * (quat.w * quat.y - quat.z * quat.x))
+    let y =  asin(2 * (quat.w * quat.y - quat.z * quat.x))
     let z = atan2(2 * (quat.w * quat.z + quat.x * quat.y), 1 - 2 * (quat.y * quat.y + quat.z * quat.z))
     return (x, y, z)
 }
