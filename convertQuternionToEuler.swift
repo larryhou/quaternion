@@ -2,7 +2,7 @@
 // axisY:𝜃	= asin(2*(w*y-z*x))
 // axisZ:𝜓	= atan2(2*(w*z+x*y),1-2*(y*y+z*z))
 
-func convertQuaternion2Euler(quat:CMQuaternion) -> (pitch:Double, roll:Double, yaw:Double)
+func convertQuaternionToEuler(quat:CMQuaternion) -> (pitch:Double, roll:Double, yaw:Double)
 {
     let x = atan2(2 * (quat.w * quat.x + quat.y * quat.z), 1 - 2 * (quat.x * quat.x + quat.y * quat.y))
     let y =  asin(2 * (quat.w * quat.y - quat.z * quat.x))
